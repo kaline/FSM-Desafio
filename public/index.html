@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Teste da máquina</title>
+</head>
+<body>
+    <h1>Teste da máquina </h1>
+    <label>Entrada</label><br/>
+    <input id="entrada" value="aabb"/>
+    <h2 id="resultado"></h2>
+    <button id="btn">Testar</button>
+    <script type="text/javascript" src="fsm.js"></script>
+    <script type="text/javascript">
+ 
+    var resultado = document.getElementById("resultado");
+    var entrada = document.getElementById("entrada");
+     
+    document.getElementById("btn").onclick=function(){
+        resultado.innerHTML="";
+        try{
+            if(fsm.aceitar(entrada.value))
+                resultado.innerHTML="Palavra aceita!";
+            else
+                resultado.innerHTML="Palavra recusada!";
+        }catch(err){
+            resultado.innerHTML="Erro ao avaliar a palavra";
+        }
+    };
+    </script>
+</body>
+</html>
