@@ -7,7 +7,7 @@
 <body>
     <h1>Teste da máquina </h1>
     <label>Entrada</label><br/>
-    <input id="entrada" value="aabb"/>
+    <input id="entrada" value=""8:00h""/>
     <h2 id="resultado"></h2>
     <button id="btn">Testar</button>
     <script type="text/javascript" src="fsm.js"></script>
@@ -19,7 +19,7 @@
     document.getElementById("btn").onclick=function(){
         resultado.innerHTML="";
         try{
-            if(fsm.aceitar(entrada.value))
+            if(fsm.aceitar(entrada.value.split("")))
                 resultado.innerHTML="Palavra aceita!";
             else
                 resultado.innerHTML="Palavra recusada!";
