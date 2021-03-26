@@ -3,30 +3,28 @@
 const fsm = {
   transicao: ["08:00", "12:00", "13:00", "18:00", "22:00"],
   estados: ["acordado", "trabalhando", "descansando", "dormindo"],
-  inicial: "dormindo",
-  atual: "dormindo",
-  finais: ["dormindo"],
+  inicial: "acordado",
+  atual: "acordado",
+  finais: ["acordado"],
   programa: {
     "08:00": {
-      dormindo: "acordado",
       acordado: "trabalhando",
+      
     },
     "12:00": {
-      dormindo: "trabalhando",
-      acordado: "trabalhando",
       trabalhando: "descansando",
+      
     },
     "13:00": {
-      trabalhando: "trabalhando",
+     
       descansando: "trabalhando",
     },
     "18:00": {
-      trabalhando: "descansando",
+      trabalhando: "dormindo",
     },
     "22:00": {
-      descansando: "dormindo",
-      trabalhando: "descansando",
-      dormindo: "dormindo",
+      dormindo: "acordado",
+     
     },
   },
   transicoesDoEstado(s){
