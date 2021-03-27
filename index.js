@@ -126,6 +126,6 @@ const server = new http.createServer((req,res)=>{
 	}
 })
 
-server.listen(3000)
-console.log("servidor no ar: http://127.0.0.1:3000");
-
+server.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port);
+});
