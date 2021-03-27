@@ -82,23 +82,23 @@ function uso(res,  mimeType, encoding){
   res.end(`
     uso: 
     <p>
-        <a href="http://127.0.0.1/aceita?08:00,12:00,13:00,18:00,22:00">http://127.0.0.1/aceita?08:00,12:00,13:00,18:00,22:00</a>
+        <a href="https://finitestatemachine.herokuapp.com/aceita?08:00,12:00,13:00,18:00,22:00">http://127.0.0.1/aceita?08:00,12:00,13:00,18:00,22:00</a>
 
     </p>
     <p>
-        <a href="http://127.0.0.1/passo?08:00 ">http://127.0.0.1/passo?08:00 </a>
+        <a href="https://finitestatemachine.herokuapp.com/passo?08:00 ">http://127.0.0.1/passo?08:00 </a>
     </p>
     <p>
-        <a href="http://127.0.0.1/passo?12:00 ">http://127.0.0.1/passo?12:00 </a>
+        <a href="https://finitestatemachine.herokuapp.com/passo?12:00 ">http://127.0.0.1/passo?12:00 </a>
     </p>
     <p>
-        <a href="http://127.0.0.1/passo?18:00 ">http://127.0.0.1/passo?18:00 </a>
+        <a href="https://finitestatemachine.herokuapp.com/passo?18:00 ">http://127.0.0.1/passo?18:00 </a>
     </p>
     <p>
-        <a href="http://127.0.0.1/passo?22:00 ">http://127.0.0.1/passo?22:00 </a>
+        <a href="https://finitestatemachine.herokuapp.com/passo?22:00 ">http://127.0.0.1/passo?22:00 </a>
     </p>
     <p>
-        <a href="http://127.0.0.1/atual ">http://127.0.0.1/atual </a>
+        <a href="https://finitestatemachine.herokuapp.com/atual ">http://127.0.0.1/atual </a>
     </p>
 
   `);
