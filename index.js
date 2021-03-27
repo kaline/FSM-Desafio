@@ -75,17 +75,32 @@ const fsm = {
 
 const http = require('http');
 
-function uso(res){
+function uso(res,  mimeType, encoding){
   console.log("faltou o input");
+    res.setHeader("Content-Type", `${mimeType}; charset=${encoding}`);
+
   res.end(`
-    uso:      
-    http://127.0.0.1:3000/aceita?08:00,12:00,13:00,18:00,22:00
-    http://127.0.0.1:3000/passo?08:00 
-    http://127.0.0.1:3000/passo?12:00
-    http://127.0.0.1:3000/passo?13:00
-    http://127.0.0.1:3000/passo?18:00
-    http://127.0.0.1:3000/passo?22:00
-    http://127.0.0.1:3000/atual
+    uso: 
+    <p>
+        <a href="http://127.0.0.1/aceita?08:00,12:00,13:00,18:00,22:00">http://127.0.0.1/aceita?08:00,12:00,13:00,18:00,22:00</a>
+
+    </p>
+    <p>
+        <a href="http://127.0.0.1/passo?08:00 ">http://127.0.0.1/passo?08:00 </a>
+    </p>
+    <p>
+        <a href="http://127.0.0.1/passo?12:00 ">http://127.0.0.1/passo?12:00 </a>
+    </p>
+    <p>
+        <a href="http://127.0.0.1/passo?18:00 ">http://127.0.0.1/passo?18:00 </a>
+    </p>
+    <p>
+        <a href="http://127.0.0.1/passo?22:00 ">http://127.0.0.1/passo?22:00 </a>
+    </p>
+    <p>
+        <a href="http://127.0.0.1/atual ">http://127.0.0.1/atual </a>
+    </p>
+
   `);
 }
 
@@ -115,7 +130,7 @@ const server = new http.createServer((req,res)=>{
           res.end(JSON.stringify(fsm));
         break;
         default:
-          uso(res);
+               return uso(res, "text/html", "utf-8");
         break;
       }
     }catch(e){
